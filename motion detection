@@ -1,0 +1,19 @@
+int motionPin = 2; 
+int ledPin = 13; 
+void setup() {
+  pinMode(motionPin, INPUT);
+  pinMode(ledPin, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  int motionDetected = digitalRead(motionPin); 
+  Serial.println(motionDetected); 
+  if (motionDetected == HIGH) { 
+    digitalWrite(ledPin, HIGH); 
+  } else {
+    digitalWrite(ledPin, LOW); 
+  }
+  
+  delay(100); 
+}
